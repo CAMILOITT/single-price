@@ -25,13 +25,15 @@
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   display: grid;
   place-content: center;
   background: var(--LightGray);
+  gap: 20px;
+  padding: 80px 30px;
 }
 .card {
-  width: 650px;
+  width: clamp(200px, 100%, 650px);
   display: grid;
   grid-template-areas: 'heading heading ' 'price why';
   overflow: hidden;
@@ -49,11 +51,11 @@ body {
 .join__title {
   color: var(--Cyan);
   margin-bottom: 20px;
-  font-size: 2em;
+  font-size: 1.52em;
 }
 .join__intro {
   color: var(--BrightYellow);
-  font-size: 1.5em;
+  font-size: 1.18em;
 }
 .join__detail {
   font-size: 1em;
@@ -97,6 +99,14 @@ body {
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
   margin-top: 30px;
+  cursor: pointer;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+.price__sign:hover {
   box-shadow: 0 7px 20px -10px black;
 }
 .card__why {
@@ -106,17 +116,25 @@ body {
   padding: 40px 35px;
   filter: brightness(1.05);
   -webkit-filter: brightness(1.05);
+  font-weight: normal;
 }
 .why__title {
   font-size: 1.2em;
   margin-bottom: 1em;
-  font-weight: normal;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    grid-template-areas: 'heading' 'price' 'why';
+  }
 }
 
 .attribution {
-  font-size: 11px;
+  font-size: 13px;
   text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--Cyan);
+  text-decoration: none;
+  font-weight: bold;
 }
