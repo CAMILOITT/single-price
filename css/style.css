@@ -5,32 +5,112 @@
   /* ## Layout */
   /* ## Colors */
   /* ### Primary */
-
   --Cyan: hsl(179, 62%, 43%);
   --BrightYellow: hsl(71, 73%, 54%);
 
   /* ### Neutral */
-
   --LightGray: hsl(204, 43%, 93%);
   --GrayishBlue: hsl(218, 22%, 67%);
 
   /* ## Typography */
   /* ### Body Copy */
-
-  --FontSize: 16px;
-  --FontFamilyKarla: ;
+  --FontFamilyKarla: 'Karla', sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: var(--FontFamilyKarla);
 }
 
 body {
   height: 100vh;
   display: grid;
   place-content: center;
+  background: var(--LightGray);
+}
+.card {
+  width: 650px;
+  display: grid;
+  grid-template-areas: 'heading heading ' 'price why';
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.card__join {
+  grid-area: heading;
+  background: white;
+  padding: 40px 30px;
+}
+.join__title {
+  color: var(--Cyan);
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+.join__intro {
+  color: var(--BrightYellow);
+  font-size: 1.5em;
+}
+.join__detail {
+  font-size: 1em;
+  margin-top: 10px;
+  color: var(--GrayishBlue);
+}
+.card__price {
+  grid-area: price;
+  background: var(--Cyan);
+  padding: 35px 30px;
+  color: var(--LightGray);
+}
+.price__title {
+  font-size: 1.2em;
+}
+.price__box {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.box__price {
+  font-size: 2em;
+  font-weight: bold;
+  margin-right: 15px;
+}
+.box__time {
+  opacity: 0.8;
+}
+.price__sign {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  background: var(--BrightYellow);
+  color: white;
+  font-weight: bold;
+  font-size: 1em;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-top: 30px;
+  box-shadow: 0 7px 20px -10px black;
+}
+.card__why {
+  grid-area: why;
+  background: var(--Cyan);
+  color: var(--LightGray);
+  padding: 40px 35px;
+  filter: brightness(1.05);
+  -webkit-filter: brightness(1.05);
+}
+.why__title {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+  font-weight: normal;
 }
 
 .attribution {
